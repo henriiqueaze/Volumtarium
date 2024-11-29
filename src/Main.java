@@ -1,132 +1,202 @@
-
 import entities.ONG;
 import entities.Oportunidade;
+import entities.Voluntario;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
+    //coloquei esses elementos fora do main para serem variaveis globais, para facilitar uso dessas variáveis no código inteiro da classe
+    private static final Scanner input = new Scanner(System.in);
+    private static final ArrayList<ONG> ongs = new ArrayList<>();
+    private static final ArrayList<Oportunidade> oportunidades = new ArrayList<>();
+    private static final ArrayList<Voluntario> voluntarios = new ArrayList<>();
+    private static boolean sair = false;
+
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        ArrayList<ONG> ongs = new ArrayList<>();
-        ArrayList<Oportunidade> oportunidades = new ArrayList<>();
         int opcao;
 
-        do {
-            System.out.println("Volumtarium");
-            System.out.println("[1] - Cadastrar ONG");
-            System.out.println("[2] - Cadastrar Oportunidade");
-            System.out.println("[3] - Listar ONGs");
-            System.out.println("[4] - Listar Oportunidades");
-            System.out.println("[5] - Sair");
-            System.out.print("Escolha uma opção: ");
-            opcao = scanner.nextInt();
-            scanner.nextLine();
+        while (!sair) {
+                exibirMenu();
+                opcao = input.nextInt();
+                input.nextLine();
 
             switch (opcao) {
-                case 1:
-                    System.out.println("Cadastro de ONG");
-                    System.out.print("Nome: ");
-                    String nome = scanner.nextLine();
-                    System.out.print("Endereço: ");
-                    String endereco = scanner.nextLine();
-                    System.out.print("Área de atuação: ");
-                    String areaAtuacao = scanner.nextLine();
-                    System.out.print("Descrição: ");
-                    String descricao = scanner.nextLine();
-                    System.out.print("Contato: ");
-                    String contato = scanner.nextLine();
+                case 1 -> cadastrarONG();
+                case 2 -> cadastrarOportunidade();
+                case 3 -> listarONGs();
+                case 4 -> listarOportunidades();
+                case 5 -> cadastrarVoluntario();
+                case 6 -> inscreverVoluntario();
+                case 7 -> sair();
+                default -> System.out.println("Opção inválida.");
+            }
+        }
+    }
 
-                    ONG ong = new ONG(ongs.size() + 1, nome, endereco, areaAtuacao, descricao, contato);
-                    ongs.add(ong);
-                    System.out.println("ONG cadastrada com sucesso!");
-                    break;
+    private static void exibirMenu() {
+        System.out.println("Volumtarium");
+        System.out.println("[1] - Cadastrar ONG");
+        System.out.println("[2] - Cadastrar Oportunidade");
+        System.out.println("[3] - Listar ONGs");
+        System.out.println("[4] - Listar Oportunidades");
+        System.out.println("[5] - Cadastrar Voluntário");
+        System.out.println("[6] - Inscrever Voluntário em Oportunidade");
+        System.out.println("[7] - Sair");
+        System.out.print("Escolha uma opção: ");
+    }
 
-                case 2:
-                    if (ongs.isEmpty()) {
-                        System.out.println("Nenhuma ONG cadastrada.");
+    private static void cadastrarONG() {
+        System.out.print("Nome da ONG: ");
+        String nome = input.nextLine();
+        System.out.print("Endereço: ");
+        String endereco = input.nextLine();
+        System.out.print("Área de atuação: ");
+        String areaAtuacao = input.nextLine();
+        System.out.print("Descrição: ");
+        String descricao = input.nextLine();
+        System.out.print("Contato: ");
+        String contato = input.nextLine();
+                           //lembrar de colocar esse ID para ser autoincrementável
+        ONG ong = new ONG(ongs.size() + 1, nome, endereco, areaAtuacao, descricao, contato);
+        ongs.add(ong);
+        System.out.println("ONG cadastrada com sucesso!");
+    }
 
-                    }
-                    
-                    else {
-                        System.out.println("Cadastro de Oportunidade");
-                        System.out.print("Descrição: ");
-                        String descOportunidade = scanner.nextLine();
-                        System.out.print("Requisitos: ");
-                        String requisitos = scanner.nextLine();
-                        System.out.print("Localização: ");
-                        String localizacao = scanner.nextLine();
-                        System.out.println("Escolha uma ONG pelo ID:");
+    private static void cadastrarOportunidade() {
+        if (ongs.isEmpty()) {
+            System.out.println("Nenhuma ONG cadastrada.");
+            return;
+        }
 
-                        for (ONG o : ongs) {
-                            System.out.println(o.getId() + " - " + o.getNome());
-                        }
+        System.out.print("Descrição: ");
+        String descricao = input.nextLine();
+        System.out.print("Requisitos: ");
+        String requisitos = input.nextLine();
+        System.out.print("Localização: ");
+        String localizacao = input.nextLine();
+        System.out.println("Escolha uma ONG pelo ID:");
 
-                        int idOng = scanner.nextInt();
-                        scanner.nextLine();
+        for (ONG o : ongs) {
+            System.out.println(o.getId() + " - " + o.getNome());
+        }
 
-                        ONG ongEscolhida = null;
-                        for (ONG o : ongs) {
-                            if (o.getId() == idOng) {
-                                ongEscolhida = o;
-                                break;
-                            }
-                        }
+        int idOng = input.nextInt();
+        input.nextLine();
 
-                        if (ongEscolhida != null) {
-                            Oportunidade oportunidade = new Oportunidade(oportunidades.size() + 1, descOportunidade, requisitos, localizacao, idOng);
-                            oportunidades.add(oportunidade);
-                            ongEscolhida.adicionarOportunidade(oportunidade);
-                            System.out.println("Oportunidade cadastrada com sucesso!");
-                        }
-
-                        else {
-                            System.out.println("ONG não encontrada.");
-                        }
-                    }
-
-                    break;
-
-                case 3:
-                    System.out.println("Lista de ONGS");
-                    if (ongs.isEmpty()) {
-                        System.out.println("Nenhuma ONG cadastrada.");
-                    }
-
-                    else {
-                        for (ONG o : ongs) {
-                            System.out.println("ID: " + o.getId() + ", Nome: " + o.getNome());
-                        }
-                    }
-
-                    break;
-
-                case 4:
-                    System.out.println("Lista de Oportunidades");
-                    if (oportunidades.isEmpty()) {
-                        System.out.println("Nenhuma oportunidade cadastrada.");
-                    }
-
-                    else {
-                        for (Oportunidade o : oportunidades) {
-                            System.out.println("ID: " + o.getId() + ", Descrição: " + o.getDescricao());
-                        }
-                    }
-
-                    break;
-
-                case 5:
-                    System.out.println("Saindo do programa...");
-                    break;
-
-                default:
-                    System.out.println("Opção inválida.");
+        ONG ongEscolhida = null;
+        for (ONG o : ongs) {
+            if (o.getId() == idOng) {
+                ongEscolhida = o;
+                break;
             }
         }
 
-        while (opcao != 5);
+        if (ongEscolhida != null) {                     //autoincrementar esse ID
+            Oportunidade oportunidade = new Oportunidade(oportunidades.size() + 1, descricao, requisitos, localizacao, idOng);
+            oportunidades.add(oportunidade);
+            ongEscolhida.adicionarOportunidade(oportunidade);
+            System.out.println("Oportunidade cadastrada com sucesso!");
+        }
 
-        scanner.close();
+        else {
+            System.out.println("ONG não encontrada.");
+        }
+    }
+
+    private static void listarONGs() {
+        if (ongs.isEmpty()) {
+            System.out.println("Nenhuma ONG cadastrada.");
+        }
+
+        else {
+            System.out.println("ONGs cadastradas:");
+            for (ONG o : ongs) {
+                System.out.println("ID: " + o.getId() + ", Nome: " + o.getNome());
+            }
+        }
+    }
+
+    private static void listarOportunidades() {
+        if (oportunidades.isEmpty()) {
+            System.out.println("Nenhuma oportunidade cadastrada.");
+        }
+
+        else {
+            System.out.println("Oportunidades cadastradas:");
+            for (Oportunidade o : oportunidades) {
+                System.out.println("ID: " + o.getId() + ", Descrição: " + o.getDescricao());
+            }
+        }
+    }
+
+    private static void cadastrarVoluntario() {
+        System.out.print("Nome do voluntário: ");
+        String nome = input.nextLine();
+        System.out.print("Idade: ");
+        int idade = input.nextInt();
+        input.nextLine();
+        System.out.print("Localização: ");
+        String localizacao = input.nextLine();
+        System.out.print("Perfil: ");
+        String perfil = input.nextLine();
+        System.out.print("Contato: ");
+        String contato = input.nextLine();
+                                              //Autoincrementar também
+        Voluntario voluntario = new Voluntario(voluntarios.size() + 1, nome, idade, localizacao, perfil, contato);
+        voluntarios.add(voluntario);
+        System.out.println("Voluntário cadastrado com sucesso!");
+    }
+
+    private static void inscreverVoluntario() {
+        if (voluntarios.isEmpty() || oportunidades.isEmpty()) {
+            System.out.println("Não há voluntários ou oportunidades disponíveis.");
+            return;
+        }
+
+        System.out.println("Escolha um voluntário pelo ID:");
+        for (Voluntario voluntario : voluntarios) {
+            System.out.println(voluntario.getId() + " - " + voluntario.getNome());
+        }
+        int idVoluntario = input.nextInt();
+        input.nextLine();
+
+        System.out.println("Escolha uma oportunidade pelo ID:");
+        for (Oportunidade oportunidade : oportunidades) {
+            System.out.println(oportunidade.getId() + " - " + oportunidade.getDescricao());
+        }
+        int idOportunidade = input.nextInt();
+        input.nextLine();
+
+        Voluntario voluntarioEscolhido = null;
+        for (Voluntario voluntario : voluntarios) {
+            if (voluntario.getId() == idVoluntario) {
+                voluntarioEscolhido = voluntario;
+                break;
+            }
+        }
+
+        Oportunidade oportunidadeEscolhida = null;
+        for (Oportunidade oportunidade : oportunidades) {
+            if (oportunidade.getId() == idOportunidade) {
+                oportunidadeEscolhida = oportunidade;
+                break;
+            }
+        }
+
+        if (voluntarioEscolhido != null && oportunidadeEscolhida != null) {
+            oportunidadeEscolhida.inscreverVoluntario(voluntarioEscolhido);
+            System.out.println("Voluntário inscrito com sucesso!");
+        }
+
+        else {
+            System.out.println("Voluntário ou oportunidade não encontrada.");
+        }
+    }
+
+    private static void sair() {
+        System.out.println("Saindo do programa...");
+        input.close();
+        sair = true;
     }
 }
-
