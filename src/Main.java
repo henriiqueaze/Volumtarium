@@ -1,8 +1,14 @@
+<<<<<<< HEAD
+import entities.ONG;
+import entities.Oportunidade;
+import entities.Voluntario;
+=======
 
 import entities.ONG;
 import entities.Oportunidade;
 import entities.Voluntario;
 import Exceptions.*;
+>>>>>>> 48f3fe9016bf229ed4bf60c51137f6891c46ab88
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,6 +21,15 @@ public class Main {
     private static final ArrayList<Voluntario> voluntarios = new ArrayList<>();
     private static boolean sair = false;
 
+<<<<<<< HEAD
+    public static void main(String[] args) {
+        int opcao;
+
+        while (!sair) {
+                exibirMenu();
+                opcao = input.nextInt();
+                input.nextLine();
+=======
     public static void main(String[] args) throws IdadeIncorreta, EntradaNaoEsperada {
         int opcao;
 
@@ -22,6 +37,7 @@ public class Main {
             exibirMenu();
             opcao = input.nextInt();
             input.nextLine();
+>>>>>>> 48f3fe9016bf229ed4bf60c51137f6891c46ab88
 
             switch (opcao) {
                 case 1 -> cadastrarONG();
@@ -51,6 +67,8 @@ public class Main {
     private static void cadastrarONG() {
         System.out.print("Nome da ONG: ");
         String nome = input.nextLine();
+<<<<<<< HEAD
+=======
         // Pode usar utilização do Set: É ideal para evitar duplicatas, pois não permite elementos repetidos.
         // List: Pode conter duplicatas, mas permite que você faça buscas explícitas com o método contains.
         // Caso precise de uma lista ordenada, você pode usar um TreeSet no lugar do HashSet.
@@ -58,6 +76,7 @@ public class Main {
 
 
 
+>>>>>>> 48f3fe9016bf229ed4bf60c51137f6891c46ab88
         System.out.print("Endereço: ");
         String endereco = input.nextLine();
         System.out.print("Área de atuação: ");
@@ -66,13 +85,21 @@ public class Main {
         String descricao = input.nextLine();
         System.out.print("Contato: ");
         String contato = input.nextLine();
+<<<<<<< HEAD
+                           //lembrar de colocar esse ID para ser autoincrementável
+=======
         //lembrar de colocar esse ID para ser autoincrementável
+>>>>>>> 48f3fe9016bf229ed4bf60c51137f6891c46ab88
         ONG ong = new ONG(ongs.size() + 1, nome, endereco, areaAtuacao, descricao, contato);
         ongs.add(ong);
         System.out.println("ONG cadastrada com sucesso!");
     }
 
+<<<<<<< HEAD
+    private static void cadastrarOportunidade() {
+=======
     private static void cadastrarOportunidade() throws EntradaNaoEsperada{
+>>>>>>> 48f3fe9016bf229ed4bf60c51137f6891c46ab88
         if (ongs.isEmpty()) {
             System.out.println("Nenhuma ONG cadastrada.");
             return;
@@ -89,6 +116,11 @@ public class Main {
         for (ONG o : ongs) {
             System.out.println(o.getId() + " - " + o.getNome());
         }
+<<<<<<< HEAD
+
+        int idOng = input.nextInt();
+        input.nextLine();
+=======
         int idOng;
 
         try {
@@ -98,6 +130,7 @@ public class Main {
             input.nextLine();
             throw new EntradaNaoEsperada("Entrada incorreta, tente novamente.");
         }
+>>>>>>> 48f3fe9016bf229ed4bf60c51137f6891c46ab88
 
         ONG ongEscolhida = null;
         for (ONG o : ongs) {
@@ -145,6 +178,14 @@ public class Main {
         }
     }
 
+<<<<<<< HEAD
+    private static void cadastrarVoluntario() {
+        System.out.print("Nome do voluntário: ");
+        String nome = input.nextLine();
+        System.out.print("Idade: ");
+        int idade = input.nextInt();
+        input.nextLine();
+=======
     private static void cadastrarVoluntario() throws IdadeIncorreta, EntradaNaoEsperada{
         System.out.print("Nome do voluntário: ");
         String nome = input.nextLine();
@@ -161,19 +202,28 @@ public class Main {
         if (idade < 18 || idade > 60){
             throw new IdadeIncorreta("Idade não aceita pelos sistemas, apenas acima de 18 anos e menor de 60.");
         }
+>>>>>>> 48f3fe9016bf229ed4bf60c51137f6891c46ab88
         System.out.print("Localização: ");
         String localizacao = input.nextLine();
         System.out.print("Perfil: ");
         String perfil = input.nextLine();
         System.out.print("Contato: ");
         String contato = input.nextLine();
+<<<<<<< HEAD
+                                              //Autoincrementar também
+=======
         //Autoincrementar também
+>>>>>>> 48f3fe9016bf229ed4bf60c51137f6891c46ab88
         Voluntario voluntario = new Voluntario(voluntarios.size() + 1, nome, idade, localizacao, perfil, contato);
         voluntarios.add(voluntario);
         System.out.println("Voluntário cadastrado com sucesso!");
     }
 
+<<<<<<< HEAD
+    private static void inscreverVoluntario() {
+=======
     private static void inscreverVoluntario() throws EntradaNaoEsperada{
+>>>>>>> 48f3fe9016bf229ed4bf60c51137f6891c46ab88
         if (voluntarios.isEmpty() || oportunidades.isEmpty()) {
             System.out.println("Não há voluntários ou oportunidades disponíveis.");
             return;
@@ -190,6 +240,10 @@ public class Main {
         for (Oportunidade oportunidade : oportunidades) {
             System.out.println(oportunidade.getId() + " - " + oportunidade.getDescricao());
         }
+<<<<<<< HEAD
+        int idOportunidade = input.nextInt();
+        input.nextLine();
+=======
         int idOportunidade;
 
         try {
@@ -199,6 +253,7 @@ public class Main {
             input.nextLine();
             throw new EntradaNaoEsperada("Entrada incorreta, tente novamente.");
         }
+>>>>>>> 48f3fe9016bf229ed4bf60c51137f6891c46ab88
 
         Voluntario voluntarioEscolhido = null;
         for (Voluntario voluntario : voluntarios) {
