@@ -1,6 +1,8 @@
+
 import entities.ONG;
 import entities.Oportunidade;
 import entities.Voluntario;
+import Exceptions.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,13 +15,13 @@ public class Main {
     private static final ArrayList<Voluntario> voluntarios = new ArrayList<>();
     private static boolean sair = false;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IdadeIncorreta, EntradaNaoEsperada {
         int opcao;
 
         while (!sair) {
-                exibirMenu();
-                opcao = input.nextInt();
-                input.nextLine();
+            exibirMenu();
+            opcao = input.nextInt();
+            input.nextLine();
 
             switch (opcao) {
                 case 1 -> cadastrarONG();
@@ -49,6 +51,13 @@ public class Main {
     private static void cadastrarONG() {
         System.out.print("Nome da ONG: ");
         String nome = input.nextLine();
+        // Pode usar utilização do Set: É ideal para evitar duplicatas, pois não permite elementos repetidos.
+        // List: Pode conter duplicatas, mas permite que você faça buscas explícitas com o método contains.
+        // Caso precise de uma lista ordenada, você pode usar um TreeSet no lugar do HashSet.
+        // Se precisar associar informações ao nome (ex.: telefone, endereço), use um Map:
+
+
+
         System.out.print("Endereço: ");
         String endereco = input.nextLine();
         System.out.print("Área de atuação: ");
@@ -57,13 +66,13 @@ public class Main {
         String descricao = input.nextLine();
         System.out.print("Contato: ");
         String contato = input.nextLine();
-                           //lembrar de colocar esse ID para ser autoincrementável
+        //lembrar de colocar esse ID para ser autoincrementável
         ONG ong = new ONG(ongs.size() + 1, nome, endereco, areaAtuacao, descricao, contato);
         ongs.add(ong);
         System.out.println("ONG cadastrada com sucesso!");
     }
 
-    private static void cadastrarOportunidade() {
+    private static void cadastrarOportunidade() throws EntradaNaoEsperada{
         if (ongs.isEmpty()) {
             System.out.println("Nenhuma ONG cadastrada.");
             return;
@@ -80,9 +89,15 @@ public class Main {
         for (ONG o : ongs) {
             System.out.println(o.getId() + " - " + o.getNome());
         }
+        int idOng;
 
-        int idOng = input.nextInt();
-        input.nextLine();
+        try {
+            idOng = input.nextInt();
+            input.nextLine();
+        } catch (Exception ea){
+            input.nextLine();
+            throw new EntradaNaoEsperada("Entrada incorreta, tente novamente.");
+        }
 
         ONG ongEscolhida = null;
         for (ONG o : ongs) {
@@ -130,25 +145,35 @@ public class Main {
         }
     }
 
-    private static void cadastrarVoluntario() {
+    private static void cadastrarVoluntario() throws IdadeIncorreta, EntradaNaoEsperada{
         System.out.print("Nome do voluntário: ");
         String nome = input.nextLine();
         System.out.print("Idade: ");
-        int idade = input.nextInt();
-        input.nextLine();
+        int idade;
+        try {
+            idade = input.nextInt();
+            input.nextLine();
+        } catch (Exception e) {
+            input.nextLine();
+            throw new EntradaNaoEsperada("Entrada inválida para a idade. Por favor, insira um número inteiro.");
+        }
+
+        if (idade < 18 || idade > 60){
+            throw new IdadeIncorreta("Idade não aceita pelos sistemas, apenas acima de 18 anos e menor de 60.");
+        }
         System.out.print("Localização: ");
         String localizacao = input.nextLine();
         System.out.print("Perfil: ");
         String perfil = input.nextLine();
         System.out.print("Contato: ");
         String contato = input.nextLine();
-                                              //Autoincrementar também
+        //Autoincrementar também
         Voluntario voluntario = new Voluntario(voluntarios.size() + 1, nome, idade, localizacao, perfil, contato);
         voluntarios.add(voluntario);
         System.out.println("Voluntário cadastrado com sucesso!");
     }
 
-    private static void inscreverVoluntario() {
+    private static void inscreverVoluntario() throws EntradaNaoEsperada{
         if (voluntarios.isEmpty() || oportunidades.isEmpty()) {
             System.out.println("Não há voluntários ou oportunidades disponíveis.");
             return;
@@ -165,8 +190,15 @@ public class Main {
         for (Oportunidade oportunidade : oportunidades) {
             System.out.println(oportunidade.getId() + " - " + oportunidade.getDescricao());
         }
-        int idOportunidade = input.nextInt();
-        input.nextLine();
+        int idOportunidade;
+
+        try {
+            idOportunidade = input.nextInt();
+            input.nextLine();
+        } catch (Exception ea){
+            input.nextLine();
+            throw new EntradaNaoEsperada("Entrada incorreta, tente novamente.");
+        }
 
         Voluntario voluntarioEscolhido = null;
         for (Voluntario voluntario : voluntarios) {
