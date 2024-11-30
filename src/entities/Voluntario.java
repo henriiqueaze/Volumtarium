@@ -1,6 +1,6 @@
 package entities;
 
-public class Voluntario {
+public abstract class Voluntario {
     private int id;
     private String nome;
     private int idade;
@@ -40,4 +40,8 @@ public class Voluntario {
     public String getContato() {
         return contato;
     }
+
+    public abstract void inscreverEmOportunidade(Oportunidade oportunidade);
+
+    public abstract void exibirInformacoes();
 }

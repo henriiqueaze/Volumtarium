@@ -8,15 +8,15 @@ public class Oportunidade {
     private String descricao;
     private String requisitos;
     private String localizacao;
-    private int idONG;
+    private ONG ONG;
     private List<Voluntario> voluntariosInscritos;
 
-    public Oportunidade(int id, String descricao, String requisitos, String localizacao, int idONG) {
+    public Oportunidade(int id, String descricao, String requisitos, String localizacao, ONG ONG) {
         this.id = id;
         this.descricao = descricao;
         this.requisitos = requisitos;
         this.localizacao = localizacao;
-        this.idONG = idONG;
+        this.ONG = ONG;
         this.voluntariosInscritos = new ArrayList<>();
     }
 
@@ -44,8 +44,8 @@ public class Oportunidade {
         return localizacao;
     }
 
-    public int getIdONG() {
-        return idONG;
+    public ONG getIdONG() {
+        return ONG;
     }
 
     public List<Voluntario> getVoluntariosInscritos() {
