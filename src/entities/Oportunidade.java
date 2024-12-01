@@ -7,15 +7,13 @@ public class Oportunidade {
     private int id;
     private String descricao;
     private String requisitos;
-    private String localizacao;
     private ONG ONG;
     private List<Voluntario> voluntariosInscritos;
 
-    public Oportunidade(int id, String descricao, String requisitos, String localizacao, ONG ONG) {
+    public Oportunidade(int id, String descricao, String requisitos, ONG ONG) {
         this.id = id;
         this.descricao = descricao;
         this.requisitos = requisitos;
-        this.localizacao = localizacao;
         this.ONG = ONG;
         this.voluntariosInscritos = new ArrayList<>();
     }
@@ -40,9 +38,6 @@ public class Oportunidade {
         return requisitos;
     }
 
-    public String getLocalizacao() {
-        return localizacao;
-    }
 
     public ONG getIdONG() {
         return ONG;

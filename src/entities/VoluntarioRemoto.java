@@ -3,8 +3,8 @@ package entities;
 public class VoluntarioRemoto extends Voluntario {
     private String habilidadesTecnicas;
 
-    public VoluntarioRemoto(int id, String nome, int idade, String localizacao, String perfil, String contato, String habilidadesTecnicas) {
-        super(id, nome, idade, localizacao, perfil, contato);
+    public VoluntarioRemoto(int id, String nome, int idade, String localizacao, String contato, String habilidadesTecnicas) {
+        super(id, nome, idade, localizacao, contato);
         this.habilidadesTecnicas = habilidadesTecnicas;
     }
 

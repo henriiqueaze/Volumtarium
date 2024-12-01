@@ -5,15 +5,13 @@ public abstract class Voluntario {
     private String nome;
     private int idade;
     private String localizacao;
-    private String perfil;
     private String contato;
 
-    public Voluntario(int id, String nome, int idade, String localizacao, String perfil, String contato) {
+    public Voluntario(int id, String nome, int idade, String localizacao, String contato) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
         this.localizacao = localizacao;
-        this.perfil = perfil;
         this.contato = contato;
     }
 
@@ -33,9 +31,6 @@ public abstract class Voluntario {
         return localizacao;
     }
 
-    public String getPerfil() {
-        return perfil;
-    }
 
     public String getContato() {
         return contato;

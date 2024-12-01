@@ -19,7 +19,7 @@ public class Gerenciador {
         ONG ongEscolhida = encontrarOngPorId(idOngEscolhida);
 
         if (ongEscolhida != null) {
-            Oportunidade oportunidade = new Oportunidade(oportunidades.size() + 1, descricao, requisitos, localizacao, ongEscolhida);
+            Oportunidade oportunidade = new Oportunidade(oportunidades.size() + 1, descricao, requisitos, ongEscolhida);
             oportunidades.add(oportunidade);
             ongEscolhida.adicionarOportunidade(oportunidade);
             System.out.println("Oportunidade cadastrada com sucesso!");
@@ -28,14 +28,14 @@ public class Gerenciador {
         }
     }
 
-    public void cadastrarVoluntario(String nome, int idade, String localizacao, String perfil, String contato, byte escolhaVoluntario, String habilidades) throws IdadeIncorreta, EntradaNaoEsperada {
+    public void cadastrarVoluntario(String nome, int idade, String localizacao, String contato, byte escolhaVoluntario, String habilidades) throws IdadeIncorreta, EntradaNaoEsperada {
         if (idade < 18 || idade > 60) {
             throw new IdadeIncorreta("Idade não aceita pelos sistemas, apenas acima de 18 anos e menor de 60.");
         }
 
         Voluntario voluntario = switch (escolhaVoluntario) {
-            case 1 -> new VoluntarioRemoto(voluntarios.size() + 1, nome, idade, localizacao, perfil, contato, habilidades);
-            case 2 -> new VoluntarioLocal(voluntarios.size() + 1, nome, idade, localizacao, perfil, contato, habilidades);
+            case 1 -> new VoluntarioRemoto(voluntarios.size() + 1, nome, idade, localizacao, contato, habilidades);
+            case 2 -> new VoluntarioLocal(voluntarios.size() + 1, nome, idade, localizacao, contato, habilidades);
             default -> throw new EntradaNaoEsperada("Escolha inválida para tipo de voluntário.");
         };
 

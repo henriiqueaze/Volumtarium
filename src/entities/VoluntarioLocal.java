@@ -3,8 +3,8 @@ package entities;
 public class VoluntarioLocal extends Voluntario {
     private String areaDeAtuacao;
 
-    public VoluntarioLocal(int id, String nome, int idade, String localizacao, String perfil, String contato, String areaDeAtuacao) {
-        super(id, nome, idade, localizacao, perfil, contato);
+    public VoluntarioLocal(int id, String nome, int idade, String localizacao, String contato, String areaDeAtuacao) {
+        super(id, nome, idade, localizacao, contato);
         this.areaDeAtuacao = areaDeAtuacao;
     }
 

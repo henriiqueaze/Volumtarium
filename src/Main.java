@@ -106,8 +106,6 @@ public class Main {
         input.nextLine();
         System.out.print("Localização: ");
         String localizacao = input.nextLine();
-        System.out.print("Perfil: ");
-        String perfil = input.nextLine();
         System.out.print("Contato: ");
         String contato = input.nextLine();
         System.out.println("Escolha o tipo de voluntário");
@@ -119,7 +117,7 @@ public class Main {
         System.out.print("Habilidades: ");
         String habilidades = input.nextLine();
 
-        gerenciador.cadastrarVoluntario(nome, idade, localizacao, perfil, contato, escolhaVoluntario, habilidades);
+        gerenciador.cadastrarVoluntario(nome, idade, localizacao, contato, escolhaVoluntario, habilidades);
     }
 
     private static void inscreverVoluntario() {
