@@ -70,7 +70,7 @@
             <Circle centerX="40.0" centerY="40.0" radius="40.0" />
          </clip>
          <image>
-            <Image url="@../../../../../../../../../Users/Henrique/Desktop/1.png" />
+            <Image url="@../../../../../../img/1.png" />
          </image>
       </ImageView>
 
