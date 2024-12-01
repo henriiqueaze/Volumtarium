@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="611.0" scaleShape="false" style="-fx-background-color: 0; -fx-background-radius: 100;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="248.0" layoutY="41.0" prefHeight="35.0" prefWidth="130.0" text="Cadastro" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+      </Label>
+      <Line endX="77.0" layoutX="313.0" layoutY="111.0" startX="-78.0" startY="1.0" />
+      <Circle fill="#f0f4f8" layoutX="391.0" layoutY="110.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#87cee0" layoutX="234.0" layoutY="112.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label alignment="CENTER" layoutX="170.0" layoutY="134.0" prefHeight="35.0" prefWidth="130.0" text="Voluntário" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="325.0" layoutY="134.0" prefHeight="35.0" prefWidth="130.0" text="ONG" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="158.0" layoutY="214.0" prefHeight="35.0" prefWidth="312.0" style="-fx-background-color: f0f4f8;" />
+      <Label alignment="CENTER" layoutX="158.0" layoutY="179.0" prefHeight="35.0" prefWidth="130.0" text="Nome Completo" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="193.0" layoutY="608.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="174.0" style="-fx-background-color: #87cee0; -fx-background-radius: 60;" text="Salvar" textFill="WHITE" AnchorPane.leftAnchor="193.0" AnchorPane.rightAnchor="180.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="464.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <clip>
+            <Circle centerX="40.0" centerY="40.0" radius="40.0" />
+         </clip>
+         <image>
+            <Image url="@../../../../../../../img/1.png" />
+         </image>
+      </ImageView>
+      <TextField layoutX="158.0" layoutY="297.0" prefHeight="35.0" prefWidth="312.0" style="-fx-background-color: f0f4f8;" />
+      <Label alignment="CENTER" layoutX="114.0" layoutY="262.0" prefHeight="35.0" prefWidth="130.0" text="Idade" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField layoutX="156.0" layoutY="473.0" prefHeight="35.0" prefWidth="312.0" style="-fx-background-color: f0f4f8;" />
+      <Label alignment="CENTER" layoutX="123.0" layoutY="438.0" prefHeight="35.0" prefWidth="130.0" text="Contato" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField layoutX="158.0" layoutY="386.0" prefHeight="35.0" prefWidth="312.0" style="-fx-background-color: f0f4f8;" />
+      <Label alignment="CENTER" layoutX="137.0" layoutY="347.0" prefHeight="35.0" prefWidth="130.0" text="Localização" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField layoutX="156.0" layoutY="552.0" prefHeight="35.0" prefWidth="312.0" style="-fx-background-color: f0f4f8;" />
+      <Label alignment="CENTER" layoutX="145.0" layoutY="517.0" prefHeight="35.0" prefWidth="156.0" text="Tipo de Voluntário" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+
+
+   </children>
+</AnchorPane>

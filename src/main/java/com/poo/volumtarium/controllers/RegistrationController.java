@@ -16,7 +16,6 @@ public class RegistrationController {
     @FXML
     private TextArea descriptionField;
 
-    // Método que será chamado ao clicar no botão "Salvar"
     @FXML
     private void handleSave() {
         String orgName = orgNameField.getText();
@@ -25,7 +24,6 @@ public class RegistrationController {
         String contact = contactField.getText();
         String description = descriptionField.getText();
 
-        // Aqui você pode processar os dados, como salvar ou validar
         System.out.println("Organização: " + orgName);
         System.out.println("Endereço: " + address);
         System.out.println("Área de Atuação: " + area);

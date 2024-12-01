@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="817.0" scaleShape="false" style="-fx-background-color: 0; -fx-background-radius: 100;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="222.0" layoutY="583.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="378.0" style="-fx-background-color: #87cee0; -fx-background-radius: 60;" text="Voltar" textFill="WHITE" AnchorPane.leftAnchor="222.0" AnchorPane.rightAnchor="217.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f4f8" height="522.0" layoutX="32.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" width="758.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3272abb5" height="200.0" layoutX="73.0" layoutY="67.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb6036c5" height="200.0" layoutX="311.0" layoutY="67.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#42e34ab3" height="200.0" layoutX="545.0" layoutY="63.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3272ab96" height="240.0" layoutX="73.0" layoutY="285.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb6036c5" height="240.0" layoutX="311.0" layoutY="285.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#42e34ab3" height="240.0" layoutX="545.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="148.0" prefHeight="39.0" prefWidth="80.0" text="ONGs" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="566.0" layoutY="144.0" prefHeight="39.0" prefWidth="159.0" text="Voluntários" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="332.0" layoutY="148.0" prefHeight="39.0" prefWidth="159.0" text="Oportunidades" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Bold" size="22.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
