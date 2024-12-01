@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="547.0" scaleShape="false" style="-fx-background-color: 0; -fx-background-radius: 100;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" layoutX="209.0" layoutY="32.0" prefHeight="35.0" prefWidth="130.0" text="Cadastro" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="25.0" />
+         </font>
+      </Label>
+      <Line endX="77.0" layoutX="274.0" layoutY="102.0" startX="-78.0" startY="1.0" />
+      <Circle fill="#f0f4f8" layoutX="196.0" layoutY="103.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fill="#87cee0" layoutX="351.0" layoutY="102.0" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label alignment="CENTER" layoutX="131.0" layoutY="125.0" prefHeight="35.0" prefWidth="130.0" text="Voluntário" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="286.0" layoutY="125.0" prefHeight="35.0" prefWidth="130.0" text="ONG" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="53.0" layoutY="215.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-color: f0f4f8;" />
+      <Label alignment="CENTER" layoutX="53.0" layoutY="180.0" prefHeight="35.0" prefWidth="130.0" text="Nome Organização" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="320.0" layoutY="215.0" prefHeight="35.0" prefWidth="185.0" promptText="(00) 0000-0000" style="-fx-background-color: f0f4f8;" />
+      <Label alignment="CENTER" layoutX="286.0" layoutY="180.0" prefHeight="35.0" prefWidth="130.0" text="Contato" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="53.0" layoutY="306.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-color: f0f4f8;" />
+      <Label alignment="CENTER" layoutX="21.0" layoutY="271.0" prefHeight="35.0" prefWidth="130.0" text="Endereço" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="318.0" layoutY="306.0" prefHeight="35.0" prefWidth="185.0" style="-fx-background-color: f0f4f8;" />
+      <Label alignment="CENTER" layoutX="309.0" layoutY="271.0" prefHeight="35.0" prefWidth="130.0" text="Área de Atuação" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField layoutX="51.0" layoutY="404.0" prefHeight="115.0" prefWidth="451.0" style="-fx-background-color: f0f4f8;" />
+      <Label alignment="CENTER" layoutX="21.0" layoutY="369.0" prefHeight="35.0" prefWidth="130.0" text="Descrição" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="187.0" layoutY="569.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="174.0" style="-fx-background-color: #87cee0; -fx-background-radius: 60;" text="Salvar" textFill="WHITE" AnchorPane.leftAnchor="187.0" AnchorPane.rightAnchor="186.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="425.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <clip>
+            <Circle centerX="40.0" centerY="40.0" radius="40.0" />
+         </clip>
+         <image>
+            <Image url="@../../../../../../../../../Users/Henrique/Desktop/1.png" />
+         </image>
+      </ImageView>
+
+
+   </children>
+</AnchorPane>
