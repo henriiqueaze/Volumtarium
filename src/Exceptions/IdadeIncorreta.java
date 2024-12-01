@@ -6,6 +6,6 @@ public class IdadeIncorreta extends Exception{
     }
 
     public String message() {
-        return "Idade não permitida para o cadastramento na oportunidade.";
+        return "Idade nÃ£o permitida para o cadastramento na oportunidade.";
     }
 }
