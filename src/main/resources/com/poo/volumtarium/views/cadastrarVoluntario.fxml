@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="611.0" scaleShape="false" style="-fx-background-color: 0; -fx-background-radius: 100;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poo.volumtarium.controllers.cadastrarVoluntarioController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="611.0" scaleShape="false" style="-fx-background-color: 0; -fx-background-radius: 100;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poo.volumtarium.controllers.CadastrarVoluntarioController">
    <children>
       <Label alignment="CENTER" layoutX="248.0" layoutY="41.0" prefHeight="35.0" prefWidth="130.0" text="Cadastro" textAlignment="CENTER">
          <font>

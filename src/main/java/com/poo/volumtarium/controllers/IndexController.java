@@ -10,7 +10,7 @@ import javafx.stage.Window;
 
 import java.io.IOException;
 
-public class mainController {
+public class IndexController {
 
     @FXML
     private Button cadastrarONG;
