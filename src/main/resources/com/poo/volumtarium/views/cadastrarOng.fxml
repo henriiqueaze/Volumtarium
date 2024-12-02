@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="547.0" scaleShape="false" style="-fx-background-color: 0; -fx-background-radius: 100;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="671.0" prefWidth="547.0" scaleShape="false" style="-fx-background-color: 0; -fx-background-radius: 100;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.poo.volumtarium.controllers.cadastrarONGController">
    <children>
       <Label alignment="CENTER" layoutX="209.0" layoutY="32.0" prefHeight="35.0" prefWidth="130.0" text="Cadastro" textAlignment="CENTER">
          <font>
@@ -70,8 +71,16 @@
             <Circle centerX="40.0" centerY="40.0" radius="40.0" />
          </clip>
          <image>
-            <Image url="@../../../../../../../img/1.png" />
+            <Image url="@../../../../img/1.png" />
          </image>
+      </ImageView>
+      <ImageView fx:id="voltar" fitHeight="44.0" fitWidth="44.0" layoutX="29.0" layoutY="28.0" onDragDetected="#onVoltarAction" pickOnBounds="true" preserveRatio="true" onMouseClicked="#onVoltarAction">
+         <image>
+            <Image url="@../../../../img/5774594.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </ImageView>
 
 
