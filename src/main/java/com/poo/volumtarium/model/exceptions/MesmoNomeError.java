@@ -6,6 +6,6 @@ public class MesmoNomeError extends Exception{
     }
 
     public String message() {
-        return "J� existe uma ONG com esse nome.";
+        return "Já existe uma ONG com esse nome.";
     }
 }
