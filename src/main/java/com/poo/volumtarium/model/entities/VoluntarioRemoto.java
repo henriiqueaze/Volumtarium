@@ -1,16 +1,11 @@
 package com.poo.volumtarium.model.entities;
 
 public class VoluntarioRemoto extends Voluntario {
-    private String habilidadesTecnicas;
 
-    public VoluntarioRemoto(int id, String nome, int idade, String localizacao, String contato, String habilidadesTecnicas) {
+    public VoluntarioRemoto(int id, String nome, int idade, String localizacao, String contato) {
         super(id, nome, idade, localizacao, contato);
-        this.habilidadesTecnicas = habilidadesTecnicas;
     }
 
-    public String getHabilidadesTecnicas() {
-        return habilidadesTecnicas;
-    }
 
     @Override
     public void inscreverEmOportunidade(Oportunidade oportunidade) {
@@ -26,6 +21,5 @@ public class VoluntarioRemoto extends Voluntario {
         System.out.println("Idade: " + getIdade());
         System.out.println("Localização: " + getLocalizacao());
         System.out.println("Contato: " + getContato());
-        System.out.println("Habilidades Técnicas: " + habilidadesTecnicas);
     }
 }

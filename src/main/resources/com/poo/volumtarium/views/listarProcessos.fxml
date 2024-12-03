@@ -3,6 +3,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
@@ -23,11 +24,8 @@
       </Button>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f0f4f8" height="522.0" layoutX="32.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" width="758.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3272abb5" height="200.0" layoutX="73.0" layoutY="67.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb6036c5" height="200.0" layoutX="311.0" layoutY="67.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#42e34ab3" height="200.0" layoutX="545.0" layoutY="63.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3272ab96" height="240.0" layoutX="73.0" layoutY="285.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb6036c5" height="240.0" layoutX="311.0" layoutY="285.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#42e34ab3" height="240.0" layoutX="545.0" layoutY="281.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eb6036c4" height="200.0" layoutX="311.0" layoutY="67.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#42e34ab2" height="200.0" layoutX="545.0" layoutY="63.0" stroke="BLACK" strokeType="INSIDE" width="200.0" />
       <Label alignment="CENTER" contentDisplay="CENTER" layoutX="133.0" layoutY="148.0" prefHeight="39.0" prefWidth="80.0" text="ONGs" textAlignment="CENTER">
          <font>
             <Font name="Arial Bold" size="27.0" />
@@ -43,5 +41,8 @@
             <Font name="Arial Bold" size="22.0" />
          </font>
       </Label>
+      <ListView fx:id="listaOngsView" layoutX="73.0" layoutY="281.0" prefHeight="247.0" prefWidth="200.0" style="-fx-background-color: #3272ab;" />
+      <ListView fx:id="listaOportunidadesView" layoutX="311.0" layoutY="281.0" prefHeight="247.0" prefWidth="200.0" style="-fx-background-color: #eb6036;" />
+      <ListView fx:id="listaVoluntariosView" layoutX="545.0" layoutY="281.0" prefHeight="247.0" prefWidth="200.0" style="-fx-background-color: #42e34a;" />
    </children>
 </AnchorPane>

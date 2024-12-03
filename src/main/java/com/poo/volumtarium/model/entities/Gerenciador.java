@@ -29,14 +29,14 @@ public class Gerenciador {
         }
     }
 
-    public void cadastrarVoluntario(String nome, int idade, String localizacao, String contato, byte escolhaVoluntario, String habilidades) throws IdadeIncorreta, EntradaNaoEsperada {
+    public void cadastrarVoluntario(String nome, int idade, String localizacao, String contato, byte escolhaVoluntario) throws IdadeIncorreta, EntradaNaoEsperada {
         if (idade < 18 || idade > 60) {
             throw new IdadeIncorreta("Idade não aceita pelos sistemas, apenas acima de 18 anos e menor de 60.");
         }
 
         Voluntario voluntario = switch (escolhaVoluntario) {
-            case 1 -> new VoluntarioRemoto(voluntarios.size() + 1, nome, idade, localizacao, contato, habilidades);
-            case 2 -> new VoluntarioLocal(voluntarios.size() + 1, nome, idade, localizacao, contato, habilidades);
+            case 1 -> new VoluntarioRemoto(0, nome, idade, localizacao, contato);
+            case 2 -> new VoluntarioLocal(0, nome, idade, localizacao, contato);
             default -> throw new EntradaNaoEsperada("Escolha inválida para tipo de voluntário.");
         };
 
@@ -121,5 +121,9 @@ public class Gerenciador {
 
     public ArrayList<Oportunidade> getOportunidades() {
         return oportunidades;
+    }
+
+    public ArrayList<Voluntario> getVoluntarios() {
+        return voluntarios;
     }
 }

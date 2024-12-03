@@ -1,5 +1,6 @@
 package com.poo.volumtarium.controllers;
 
+import com.poo.volumtarium.model.entities.Gerenciador;
 import com.poo.volumtarium.model.entities.ONG;
 import com.poo.volumtarium.model.exceptions.FaltandoCampoException;
 import com.poo.volumtarium.utils.TelaUtils;
@@ -32,15 +33,25 @@ public class CadastrarONGController {
     @FXML
     private TextField descricaoField;
 
+    private Gerenciador gerenciador;
+
+    public void initialize() {
+        this.gerenciador = new Gerenciador();
+    }
+
     @FXML
     public void onSalvarAction() {
         try {
             ONG novaOng = criarONGAPartirCampos();
+
+            gerenciador.cadastrarONG(novaOng.getNome(), novaOng.getEndereco(), novaOng.getAreaAtuacao(), novaOng.getDescricao(), novaOng.getContato());
             System.out.println("ONG criada com sucesso: " + novaOng);
 
             ValidacaoUtils.exibirMensagemSucesso("ONG cadastrada com sucesso!");
-        } catch (FaltandoCampoException e) {
-            System.err.println("Erro ao cadastrar ONG: " + e.getMessage());
+        }
+
+        catch (FaltandoCampoException e) {
+            ValidacaoUtils.exibirMensagemErro("Erro ao cadastrar ONG: " + e.getMessage());
         }
     }
 
@@ -60,4 +71,5 @@ public class CadastrarONGController {
     public void onVoltarAction() {
         TelaUtils.abrirNovaTela(voltar.getScene().getWindow(), "index.fxml", "Menu Principal");
     }
+
 }

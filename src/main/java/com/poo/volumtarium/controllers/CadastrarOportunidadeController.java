@@ -1,7 +1,9 @@
 package com.poo.volumtarium.controllers;
 
+import com.poo.volumtarium.model.entities.Gerenciador;
 import com.poo.volumtarium.model.entities.ONG;
 import com.poo.volumtarium.model.entities.Oportunidade;
+import com.poo.volumtarium.model.exceptions.EntradaNaoEsperada;
 import com.poo.volumtarium.model.exceptions.FaltandoCampoException;
 import com.poo.volumtarium.utils.TelaUtils;
 import com.poo.volumtarium.utils.ValidacaoUtils;
@@ -32,26 +34,25 @@ public class CadastrarOportunidadeController {
 
     private ObservableList<ONG> listaDeOngs;
 
+    private Gerenciador gerenciador;
+
     @FXML
     public void initialize() {
+        this.gerenciador = new Gerenciador();
 
         listaDeOngs = FXCollections.observableArrayList();
 
         ONGField.setItems(listaDeOngs);
 
-        listaDeOngs.add(new ONG("ONG A", "Endereço A", "Saúde", "Descrição A", "Contato A"));
-        listaDeOngs.add(new ONG("ONG B", "Endereço B", "Educação", "Descrição B", "Contato B"));
-        listaDeOngs.add(new ONG("ONG C", "Endereço C", "Meio Ambiente", "Descrição C", "Contato C"));
+        listaDeOngs.addAll(gerenciador.getOngs());
 
-        ONGField.setCellFactory(param -> new javafx.scene.control.ListCell<>() {
+        ONGField.setCellFactory(param -> new javafx.scene.control.ListCell<ONG>() {
             @Override
             protected void updateItem(ONG item, boolean empty) {
                 super.updateItem(item, empty);
                 if (empty || item == null) {
                     setText(null);
-                }
-
-                else {
+                } else {
                     setText(item.getNome());
                 }
             }
@@ -62,6 +63,8 @@ public class CadastrarOportunidadeController {
     public void onSalvarAction() {
         try {
             Oportunidade novaOportunidade = criarOportunidadeAPartirCampos();
+
+            gerenciador.cadastrarOportunidade(novaOportunidade.getDescricao(), novaOportunidade.getRequisitos(), novaOportunidade.getIdONG().getEndereco(), novaOportunidade.getIdONG().getId());
             System.out.println("Oportunidade criada com sucesso: " + novaOportunidade);
 
             ValidacaoUtils.exibirMensagemSucesso("Oportunidade cadastrada com sucesso!");
@@ -70,20 +73,26 @@ public class CadastrarOportunidadeController {
         catch (FaltandoCampoException e) {
             ValidacaoUtils.exibirMensagemErro("Erro ao cadastrar oportunidade: " + e.getMessage());
         }
+
+        catch (EntradaNaoEsperada e) {
+            ValidacaoUtils.exibirMensagemErro("Erro inesperado: " + e.getMessage());
+        }
     }
 
-    private Oportunidade criarOportunidadeAPartirCampos() throws FaltandoCampoException {
-        String requesitos = requesitosField.getText();
-        ONG ongSelecionada = ONGField.getSelectionModel().getSelectedItem();
+    private Oportunidade criarOportunidadeAPartirCampos() throws EntradaNaoEsperada {
+        String requisitos = requesitosField.getText();
+        ONG ongSelecionada = ONGField.getSelectionModel().getSelectedItem(); // Pega a ONG selecionada na ListView
         String descricao = descricaoField.getText();
 
-        ValidacaoUtils.validarCamposObrigatorios(requesitos, descricao, ongSelecionada);
+        ValidacaoUtils.validarCamposObrigatorios(requisitos, descricao, ongSelecionada);
 
-        return new Oportunidade(requesitos, descricao, ongSelecionada);
+        return new Oportunidade(descricao, requisitos, ongSelecionada);
     }
 
     @FXML
     public void onVoltarAction() {
         TelaUtils.abrirNovaTela(voltar.getScene().getWindow(), "index.fxml", "Menu Principal");
     }
+
+
 }
