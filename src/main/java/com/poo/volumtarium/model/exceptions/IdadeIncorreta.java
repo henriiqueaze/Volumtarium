@@ -1,4 +1,4 @@
-package Exceptions;
+package com.poo.volumtarium.model.exceptions;
 
 public class IdadeIncorreta extends Exception{
     public IdadeIncorreta(String message) {

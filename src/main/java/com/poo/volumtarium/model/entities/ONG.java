@@ -1,4 +1,4 @@
-package entities;
+package com.poo.volumtarium.model.entities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +12,7 @@ public class ONG {
     private String contato;
     private List<Oportunidade> oportunidades;
 
-    public ONG(int id, String nome, String endereco, String areaAtuacao, String descricao, String contato) {
-        this.id = id;
+    public ONG(String nome, String endereco, String areaAtuacao, String descricao, String contato) {
         this.nome = nome;
         this.endereco = endereco;
         this.areaAtuacao = areaAtuacao;

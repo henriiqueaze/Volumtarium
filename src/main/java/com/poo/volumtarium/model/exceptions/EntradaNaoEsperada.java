@@ -1,4 +1,4 @@
-package Exceptions;
+package com.poo.volumtarium.model.exceptions;
 
 public class EntradaNaoEsperada extends Exception{
     public EntradaNaoEsperada(String message) {

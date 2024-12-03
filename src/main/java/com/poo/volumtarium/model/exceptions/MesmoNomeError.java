@@ -1,4 +1,4 @@
-package Exceptions;
+package com.poo.volumtarium.model.exceptions;
 
 public class MesmoNomeError extends Exception{
     public MesmoNomeError(String message) {
