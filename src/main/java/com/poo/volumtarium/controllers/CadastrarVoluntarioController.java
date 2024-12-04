@@ -46,7 +46,7 @@ public class CadastrarVoluntarioController {
     public void initialize() {
         System.out.println("initialize chamado");
 
-        this.gerenciador = new Gerenciador();
+        this.gerenciador = Gerenciador.getInstance();
         listaDeTipos = FXCollections.observableArrayList("Voluntário Local", "Voluntário Remoto");
 
         if (tipoVoluntarioField != null) {

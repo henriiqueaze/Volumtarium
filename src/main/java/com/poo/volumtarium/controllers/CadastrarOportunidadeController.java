@@ -38,7 +38,7 @@ public class CadastrarOportunidadeController {
 
     @FXML
     public void initialize() {
-        this.gerenciador = new Gerenciador();
+        this.gerenciador = Gerenciador.getInstance();
 
         listaDeOngs = FXCollections.observableArrayList();
 

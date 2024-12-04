@@ -37,7 +37,7 @@ public class ListarProcessosController {
 
     @FXML
     public void initialize() {
-        gerenciador = new Gerenciador();
+        this.gerenciador = Gerenciador.getInstance();
 
         if (gerenciador.getOngs().isEmpty() && gerenciador.getOportunidades().isEmpty() && gerenciador.getVoluntarios().isEmpty()) {
             ValidacaoUtils.exibirMensagemErro("Todos os campos estão vazios");
@@ -91,5 +91,9 @@ public class ListarProcessosController {
     @FXML
     public void onVoltarAction() {
         TelaUtils.abrirNovaTela(voltar.getScene().getWindow(), "index.fxml", "Menu Principal");
+    }
+
+    public void onListarVoluntarios() {
+        gerenciador.getVoluntarios();
     }
 }

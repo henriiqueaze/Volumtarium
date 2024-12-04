@@ -1,6 +1,6 @@
-package test.java.exceptions;
+package com.poo.volumtarium.model.exceptions;
 
-import Exceptions.EntradaNaoEsperada;
+import com.poo.volumtarium.model.exceptions.EntradaNaoEsperada;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

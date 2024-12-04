@@ -7,9 +7,20 @@ import com.poo.volumtarium.model.exceptions.ListaVazia;
 import java.util.ArrayList;
 
 public class Gerenciador {
+    private static Gerenciador instancia;
     private final ArrayList<ONG> ongs = new ArrayList<>();
     private final ArrayList<Oportunidade> oportunidades = new ArrayList<>();
     private final ArrayList<Voluntario> voluntarios = new ArrayList<>();
+    private Oportunidade oportunidade;
+
+    private Gerenciador() {}
+
+    public static Gerenciador getInstance() {
+        if (instancia == null) {
+            instancia = new Gerenciador();
+        }
+        return instancia;
+    }
 
     public void cadastrarONG(String nome, String endereco, String areaAtuacao, String descricao, String contato) {
         ONG ong = new ONG(0, nome, endereco, areaAtuacao, descricao, contato);
@@ -32,7 +43,7 @@ public class Gerenciador {
         }
     }
 
-    public void registrarParticipacao(Voluntario voluntario, Oportunidade oportunidade) throws EntradaNaoEsperada {
+    public void registrarParticipacao(Voluntario voluntario) throws EntradaNaoEsperada {
         if (voluntario == null || oportunidade == null) {
             throw new EntradaNaoEsperada("Voluntário ou Oportunidade não selecionados.");
         }

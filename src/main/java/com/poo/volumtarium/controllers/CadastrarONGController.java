@@ -37,7 +37,7 @@ public class CadastrarONGController {
     private Gerenciador gerenciador;
 
     public void initialize() {
-        this.gerenciador = new Gerenciador();
+        this.gerenciador = Gerenciador.getInstance();
     }
 
     @FXML

@@ -31,7 +31,7 @@ public class RegistrarParticipacaoController {
 
     @FXML
     public void initialize() {
-        this.gerenciador = new Gerenciador();
+        this.gerenciador = Gerenciador.getInstance();
 
         ObservableList<Voluntario> listaVoluntarios = FXCollections.observableArrayList(gerenciador.getVoluntarios());
         voluntarioField.setItems(listaVoluntarios);
@@ -53,7 +53,7 @@ public class RegistrarParticipacaoController {
                 throw new EntradaNaoEsperada("Selecione um voluntário.");
             }
 
-            gerenciador.registrarParticipacao(voluntarioSelecionado, oportunidadeSelecionada);
+            gerenciador.registrarParticipacao(voluntarioSelecionado);
 
             ValidacaoUtils.exibirMensagemSucesso("Participação registrada com sucesso!");
         }

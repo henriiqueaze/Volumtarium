@@ -1,6 +1,6 @@
-package test.java.exceptions;
+package com.poo.volumtarium.model.exceptions;
 
-import Exceptions.MesmoNomeError;
+import com.poo.volumtarium.model.exceptions.MesmoNomeError;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
