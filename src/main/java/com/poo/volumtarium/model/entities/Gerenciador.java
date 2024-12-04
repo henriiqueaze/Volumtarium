@@ -2,6 +2,7 @@ package com.poo.volumtarium.model.entities;
 
 import com.poo.volumtarium.model.exceptions.EntradaNaoEsperada;
 import com.poo.volumtarium.model.exceptions.IdadeIncorreta;
+import com.poo.volumtarium.model.exceptions.ListaVazia;
 
 import java.util.ArrayList;
 
@@ -84,33 +85,30 @@ public class Gerenciador {
         return null;
     }
 
-    public void listarONGs() {
+    public void listarONGs() throws ListaVazia{
         if (ongs.isEmpty()) {
-            System.out.println("Nenhuma ONG cadastrada.");
-        } else {
-            for (ONG ong : ongs) {
-                System.out.println("[" + ong.getId() + "] - " + ong.getNome());
-            }
+            throw new ListaVazia("A lista de ONGs encontra-se vazia.");
+        }
+        for (ONG ong : ongs) {
+            System.out.println("[" + ong.getId() + "] - " + ong.getNome());
         }
     }
 
-    public void listarOportunidades() {
+    public void listarOportunidades() throws ListaVazia{
         if (oportunidades.isEmpty()) {
-            System.out.println("Nenhuma oportunidade cadastrada.");
-        } else {
-            for (Oportunidade oportunidade : oportunidades) {
-                System.out.println("[" + oportunidade.getId() + "] - " + oportunidade.getDescricao());
-            }
+            throw new ListaVazia("A lista de oportunidades encontra-se vazia.");
+        }
+        for (Oportunidade oportunidade : oportunidades) {
+            System.out.println("[" + oportunidade.getId() + "] - " + oportunidade.getDescricao());
         }
     }
 
-    public void listarVoluntarios() {
+    public void listarVoluntarios() throws ListaVazia{
         if (voluntarios.isEmpty()) {
-            System.out.println("Nenhuma oportunidade cadastrada.");
-        } else {
-            for (Voluntario voluntario : voluntarios) {
-                System.out.println("[" + voluntario.getId() + "] - " + voluntario.getNome());
-            }
+            throw new ListaVazia("A lista de voluntários encontra-se vazia.");
+        }
+        for (Voluntario voluntario : voluntarios) {
+            System.out.println("[" + voluntario.getId() + "] - " + voluntario.getNome());
         }
     }
 
