@@ -10,7 +10,8 @@ public class Oportunidade {
     private ONG ONG;
     private List<Voluntario> voluntariosInscritos;
 
-    public Oportunidade(String descricao, String requisitos, ONG ONG) {
+    public Oportunidade(int id,String descricao, String requisitos, ONG ONG) {
+        this.id = id;
         this.descricao = descricao;
         this.requisitos = requisitos;
         this.ONG = ONG;
@@ -33,10 +34,13 @@ public class Oportunidade {
         return descricao;
     }
 
+    public com.poo.volumtarium.model.entities.ONG getONG() {
+        return ONG;
+    }
+
     public String getRequisitos() {
         return requisitos;
     }
-
 
     public ONG getIdONG() {
         return ONG;

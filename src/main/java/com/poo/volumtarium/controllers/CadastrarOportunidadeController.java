@@ -86,13 +86,12 @@ public class CadastrarOportunidadeController {
 
         ValidacaoUtils.validarCamposObrigatorios(requisitos, descricao, ongSelecionada);
 
-        return new Oportunidade(descricao, requisitos, ongSelecionada);
+        return new Oportunidade(0, descricao, requisitos, ongSelecionada);
     }
 
     @FXML
     public void onVoltarAction() {
         TelaUtils.abrirNovaTela(voltar.getScene().getWindow(), "index.fxml", "Menu Principal");
     }
-
 
 }

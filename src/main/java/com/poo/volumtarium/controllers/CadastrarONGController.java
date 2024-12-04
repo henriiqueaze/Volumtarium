@@ -56,6 +56,7 @@ public class CadastrarONGController {
     }
 
     private ONG criarONGAPartirCampos() throws FaltandoCampoException {
+        int id = 0;
         String nome = nomeField.getText();
         String endereco = enderecoField.getText();
         String areaAtuacao = atuacaoField.getText();
@@ -64,7 +65,7 @@ public class CadastrarONGController {
 
         ValidacaoUtils.validarCamposObrigatorios(nome, endereco, areaAtuacao, descricao, contato);
 
-        return new ONG(nome, endereco, areaAtuacao, descricao, contato);
+        return new ONG(id, nome, endereco, areaAtuacao, descricao, contato);
     }
 
     @FXML

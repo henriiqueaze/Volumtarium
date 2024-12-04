@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ONG {
+
     private int id;
     private String nome;
     private String endereco;
@@ -12,7 +13,8 @@ public class ONG {
     private String contato;
     private List<Oportunidade> oportunidades;
 
-    public ONG(String nome, String endereco, String areaAtuacao, String descricao, String contato) {
+    public ONG(int id, String nome, String endereco, String areaAtuacao, String descricao, String contato) {
+        this.id = id;
         this.nome = nome;
         this.endereco = endereco;
         this.areaAtuacao = areaAtuacao;

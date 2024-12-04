@@ -12,7 +12,7 @@ public class Gerenciador {
     private final ArrayList<Voluntario> voluntarios = new ArrayList<>();
 
     public void cadastrarONG(String nome, String endereco, String areaAtuacao, String descricao, String contato) {
-        ONG ong = new ONG(nome, endereco, areaAtuacao, descricao, contato);
+        ONG ong = new ONG(0, nome, endereco, areaAtuacao, descricao, contato);
         ongs.add(ong);
         System.out.println("ONG cadastrada com sucesso!");
     }
@@ -21,7 +21,7 @@ public class Gerenciador {
         ONG ongEscolhida = encontrarOngPorId(idOngEscolhida);
 
         if (ongEscolhida != null) {
-            Oportunidade oportunidade = new Oportunidade(descricao, requisitos, ongEscolhida);
+            Oportunidade oportunidade = new Oportunidade(0, descricao, requisitos, ongEscolhida);
             oportunidades.add(oportunidade);
             ongEscolhida.adicionarOportunidade(oportunidade);
             System.out.println("Oportunidade cadastrada com sucesso!");
