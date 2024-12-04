@@ -32,6 +32,17 @@ public class Gerenciador {
         }
     }
 
+    public void registrarParticipacao(Voluntario voluntario, Oportunidade oportunidade) throws EntradaNaoEsperada {
+        if (voluntario == null || oportunidade == null) {
+            throw new EntradaNaoEsperada("Voluntário ou Oportunidade não selecionados.");
+        }
+
+        oportunidade.inscreverVoluntario(voluntario);
+
+        System.out.println("Participação registrada com sucesso!");
+    }
+
+
     public void cadastrarVoluntario(String nome, int idade, String localizacao, String contato, byte escolhaVoluntario) throws IdadeIncorreta, EntradaNaoEsperada {
         if (idade < 18 || idade > 60) {
             throw new IdadeIncorreta("Idade não aceita pelos sistemas, apenas acima de 18 anos e menor de 60.");

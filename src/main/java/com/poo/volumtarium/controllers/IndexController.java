@@ -1,5 +1,6 @@
 package com.poo.volumtarium.controllers;
 
+import com.poo.volumtarium.utils.TelaUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -29,52 +30,26 @@ public class IndexController {
 
     @FXML
     public void onCadastrarOportunidadeAction() {
-        abrirNovaTela("cadastrarOportunidade.fxml", "Cadastrar Oportunidade");
+        TelaUtils.abrirNovaTela(cadastrarONG.getScene().getWindow(),"cadastrarOportunidade.fxml", "Cadastrar Oportunidade");
     }
 
     @FXML
     public void onCadastrarONGAction() {
-        abrirNovaTela("cadastrarOng.fxml", "Cadastrar ONG");
+        TelaUtils.abrirNovaTela(cadastrarONG.getScene().getWindow(),"cadastrarOng.fxml", "Cadastrar ONG");
     }
 
     @FXML
     public void onCadastrarVoluntarioAction() {
-        abrirNovaTela("cadastrarVoluntario.fxml", "Cadastrar Voluntário");
+        TelaUtils.abrirNovaTela(cadastrarONG.getScene().getWindow(),"cadastrarVoluntario.fxml", "Cadastrar Voluntário");
     }
 
     @FXML
     public void onListarProcessosAction() {
-        abrirNovaTela("listarProcessos.fxml", "Listar Processos");
+        TelaUtils.abrirNovaTela(cadastrarONG.getScene().getWindow(),"listarProcessos.fxml", "Listar Processos");
     }
 
     @FXML
     public void onRegistrarParticipacaoAction() {
-        abrirNovaTela("registrarParticipacao-view.fxml", "Registrar Participação");
-    }
-
-    private void abrirNovaTela(String fxmlArquivo, String titulo) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/poo/volumtarium/views/" + fxmlArquivo));
-            Parent root = loader.load();
-
-            Stage novaTela = new Stage();
-            novaTela.setTitle(titulo);
-            novaTela.setScene(new Scene(root));
-            novaTela.show();
-
-            fecharJanelaAtual();
-        }
-
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void fecharJanelaAtual() {
-        Window window = cadastrarONG.getScene().getWindow();
-
-        if (window instanceof Stage) {
-            ((Stage) window).close();
-        }
+        TelaUtils.abrirNovaTela(cadastrarONG.getScene().getWindow(), "registrarParticipacao.fxml", "Registrar Participação");
     }
 }

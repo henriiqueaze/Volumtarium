@@ -44,17 +44,24 @@ public class CadastrarVoluntarioController {
 
     @FXML
     public void initialize() {
+        System.out.println("initialize chamado");
+
         this.gerenciador = new Gerenciador();
         listaDeTipos = FXCollections.observableArrayList("Voluntário Local", "Voluntário Remoto");
-        tipoVoluntarioField.setItems(listaDeTipos);
 
-        tipoVoluntarioField.setCellFactory(param -> new ListCell<>() {
-            @Override
-            protected void updateItem(String item, boolean empty) {
-                super.updateItem(item, empty);
-                setText(empty || item == null ? null : item);
-            }
-        });
+        if (tipoVoluntarioField != null) {
+            tipoVoluntarioField.setItems(listaDeTipos);
+
+            tipoVoluntarioField.setCellFactory(param -> new ListCell<>() {
+                @Override
+                protected void updateItem(String item, boolean empty) {
+                    super.updateItem(item, empty);
+                    setText(empty || item == null ? null : item);
+                }
+            });
+        } else {
+            System.out.println("Erro: tipoVoluntarioField não foi inicializado.");
+        }
     }
 
     @FXML
