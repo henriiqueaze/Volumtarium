@@ -25,7 +25,9 @@ public class Gerenciador {
             oportunidades.add(oportunidade);
             ongEscolhida.adicionarOportunidade(oportunidade);
             System.out.println("Oportunidade cadastrada com sucesso!");
-        } else {
+        }
+
+        else {
             System.out.println("ONG não encontrada.");
         }
     }
@@ -89,6 +91,7 @@ public class Gerenciador {
         if (ongs.isEmpty()) {
             throw new ListaVazia("A lista de ONGs encontra-se vazia.");
         }
+
         for (ONG ong : ongs) {
             System.out.println("[" + ong.getId() + "] - " + ong.getNome());
         }
@@ -98,6 +101,7 @@ public class Gerenciador {
         if (oportunidades.isEmpty()) {
             throw new ListaVazia("A lista de oportunidades encontra-se vazia.");
         }
+
         for (Oportunidade oportunidade : oportunidades) {
             System.out.println("[" + oportunidade.getId() + "] - " + oportunidade.getDescricao());
         }
@@ -107,11 +111,23 @@ public class Gerenciador {
         if (voluntarios.isEmpty()) {
             throw new ListaVazia("A lista de voluntários encontra-se vazia.");
         }
+
         for (Voluntario voluntario : voluntarios) {
             System.out.println("[" + voluntario.getId() + "] - " + voluntario.getNome());
         }
     }
 
+    public void addOng (ONG ong) {
+        ongs.add(ong);
+    }
+
+    public void addOportunidade (Oportunidade oportunidade) {
+        oportunidades.add(oportunidade);
+    }
+
+    public void addVoluntario(Voluntario voluntario) {
+        voluntarios.add(voluntario);
+    }
 
     public ArrayList<ONG> getOngs() {
         return ongs;

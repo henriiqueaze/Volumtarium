@@ -31,7 +31,6 @@ public abstract class Voluntario {
         return localizacao;
     }
 
-
     public String getContato() {
         return contato;
     }

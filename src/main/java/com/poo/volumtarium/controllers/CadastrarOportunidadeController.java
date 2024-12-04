@@ -52,7 +52,9 @@ public class CadastrarOportunidadeController {
                 super.updateItem(item, empty);
                 if (empty || item == null) {
                     setText(null);
-                } else {
+                }
+
+                else {
                     setText(item.getNome());
                 }
             }
@@ -64,7 +66,8 @@ public class CadastrarOportunidadeController {
         try {
             Oportunidade novaOportunidade = criarOportunidadeAPartirCampos();
 
-            gerenciador.cadastrarOportunidade(novaOportunidade.getDescricao(), novaOportunidade.getRequisitos(), novaOportunidade.getIdONG().getEndereco(), novaOportunidade.getIdONG().getId());
+            Oportunidade oportunidade = new Oportunidade(0, novaOportunidade.getDescricao(), novaOportunidade.getRequisitos(), novaOportunidade.getONG());
+            gerenciador.addOportunidade(oportunidade);
             System.out.println("Oportunidade criada com sucesso: " + novaOportunidade);
 
             ValidacaoUtils.exibirMensagemSucesso("Oportunidade cadastrada com sucesso!");
@@ -81,7 +84,7 @@ public class CadastrarOportunidadeController {
 
     private Oportunidade criarOportunidadeAPartirCampos() throws EntradaNaoEsperada {
         String requisitos = requesitosField.getText();
-        ONG ongSelecionada = ONGField.getSelectionModel().getSelectedItem(); // Pega a ONG selecionada na ListView
+        ONG ongSelecionada = ONGField.getSelectionModel().getSelectedItem();
         String descricao = descricaoField.getText();
 
         ValidacaoUtils.validarCamposObrigatorios(requisitos, descricao, ongSelecionada);

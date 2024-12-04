@@ -66,7 +66,9 @@ public class CadastrarVoluntarioController {
             System.out.println("Voluntário criado com sucesso: " + novoVoluntario);
 
             ValidacaoUtils.exibirMensagemSucesso("Voluntário cadastrado com sucesso!");
-        } catch (FaltandoCampoException | IllegalArgumentException | IdadeIncorreta | EntradaNaoEsperada e) {
+        }
+
+        catch (FaltandoCampoException | IllegalArgumentException | IdadeIncorreta | EntradaNaoEsperada e) {
             ValidacaoUtils.exibirMensagemErro("Erro ao cadastrar voluntário: " + e.getMessage());
         }
     }

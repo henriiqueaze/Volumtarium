@@ -3,6 +3,7 @@ package com.poo.volumtarium.controllers;
 import com.poo.volumtarium.model.entities.Gerenciador;
 import com.poo.volumtarium.model.entities.ONG;
 import com.poo.volumtarium.model.exceptions.FaltandoCampoException;
+import com.poo.volumtarium.model.exceptions.ListaVazia;
 import com.poo.volumtarium.utils.TelaUtils;
 import com.poo.volumtarium.utils.ValidacaoUtils;
 import javafx.fxml.FXML;
@@ -44,7 +45,10 @@ public class CadastrarONGController {
         try {
             ONG novaOng = criarONGAPartirCampos();
 
-            gerenciador.cadastrarONG(novaOng.getNome(), novaOng.getEndereco(), novaOng.getAreaAtuacao(), novaOng.getDescricao(), novaOng.getContato());
+            ValidacaoUtils.verificarNome(gerenciador.getOngs(), novaOng.getNome());
+
+            ONG ong = new ONG(0, novaOng.getNome(), novaOng.getEndereco(), novaOng.getAreaAtuacao(), novaOng.getDescricao(), novaOng.getContato());
+            gerenciador.addOng(ong);
             System.out.println("ONG criada com sucesso: " + novaOng);
 
             ValidacaoUtils.exibirMensagemSucesso("ONG cadastrada com sucesso!");
@@ -54,6 +58,7 @@ public class CadastrarONGController {
             ValidacaoUtils.exibirMensagemErro("Erro ao cadastrar ONG: " + e.getMessage());
         }
     }
+
 
     private ONG criarONGAPartirCampos() throws FaltandoCampoException {
         int id = 0;

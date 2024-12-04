@@ -7,6 +7,7 @@ import com.poo.volumtarium.model.entities.Voluntario;
 import com.poo.volumtarium.model.entities.VoluntarioLocal;
 import com.poo.volumtarium.model.entities.VoluntarioRemoto;
 import com.poo.volumtarium.utils.TelaUtils;
+import com.poo.volumtarium.utils.ValidacaoUtils;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -32,9 +33,15 @@ public class ListarProcessosController {
     private ObservableList<Oportunidade> listaOportunidades;
     private ObservableList<Voluntario> listaVoluntarios;
 
+    //pedi pro chatgpt tentar fazer e ainda n foi :(
+
     @FXML
     public void initialize() {
         gerenciador = new Gerenciador();
+
+        if (gerenciador.getOngs().isEmpty() && gerenciador.getOportunidades().isEmpty() && gerenciador.getVoluntarios().isEmpty()) {
+            ValidacaoUtils.exibirMensagemErro("Todos os campos estão vazios");
+        }
 
         listaOngs = FXCollections.observableArrayList(gerenciador.getOngs());
         listaOportunidades = FXCollections.observableArrayList(gerenciador.getOportunidades());
@@ -66,10 +73,14 @@ public class ListarProcessosController {
                 super.updateItem(item, empty);
                 if (empty || item == null) {
                     setText(null);
-                } else if (item instanceof VoluntarioLocal) {
+                }
+
+                else if (item instanceof VoluntarioLocal) {
                     VoluntarioLocal local = (VoluntarioLocal) item;
                     setText(local.getNome() + " (Local: " + local.getLocalizacao() + ")");
-                } else if (item instanceof VoluntarioRemoto) {
+                }
+
+                else if (item instanceof VoluntarioRemoto) {
                     VoluntarioRemoto remoto = (VoluntarioRemoto) item;
                     setText(remoto.getNome() + " (Remoto: " + remoto.getContato() + ")");
                 }

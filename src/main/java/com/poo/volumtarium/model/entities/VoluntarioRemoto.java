@@ -6,7 +6,6 @@ public class VoluntarioRemoto extends Voluntario {
         super(id, nome, idade, localizacao, contato);
     }
 
-
     @Override
     public void inscreverEmOportunidade(Oportunidade oportunidade) {
         oportunidade.inscreverVoluntario(this);
