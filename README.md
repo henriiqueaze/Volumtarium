@@ -1,45 +1,35 @@
-#O Volumtarium ou API de Cadastro de ONGs e Voluntariado.
+<h1 align='center'>Volumtarium</h1> 
+<p align='center'>
+    <img alt="Static Badge" src="https://img.shields.io/badge/%20Java%20-%20%2387cee0?style=for-the-badge&logo=openjdk&logoColor=%23000000&labelColor=%23d2f6ff">
+    <img alt="Static Badge" src="https://img.shields.io/badge/%20JUnit-%20%2387cee0?style=for-the-badge&logo=junit5&logoColor=%23000000&labelColor=%23d2f6ff">
+    <img alt="Static Badge" src="https://img.shields.io/badge/Scene%20Builder-%20%2387cee0?style=for-the-badge&logo=openlayers&logoColor=%23000000&labelColor=%23d2f6ff">
+</p>
+<p>É uma aplicação desenvolvida em Java com o objetivo de conectar ONGs e voluntários de forma eficiente. 
+    Este projeto permite que ONGs se cadastrem, detalhem suas áreas de atuação, e publiquem oportunidades de trabalho voluntário. 
+    Voluntários podem buscar oportunidades com base em seu perfil ou localização, garantindo uma conexão rápida e precisa.</p>
 
-    É uma API desenvolvida em Java com o objetivo de conectar ONGs e voluntários de forma eficiente. Este projeto permite
-    que ONGs se cadastrem, detalhem suas áreas de atuação, e publiquem oportunidades de trabalho voluntário.
-    Voluntários podem buscar oportunidades com base em seu perfil ou localização, garantindo uma conexão rápida e precisa.
 
-#Funcionalidades
-
-    Cadastro de ONGs: Permite que as ONGs insiram informações detalhadas sobre suas áreas de atuação.
-
+<h2>Funcionalidades</h2>
+<p>Cadastro de ONGs: Permite que as ONGs insiram informações detalhadas sobre suas áreas de atuação.
     Busca por Voluntários: Os voluntários podem pesquisar por oportunidades de trabalho de acordo com suas preferências e localização.
+    Inscrição e Contato Direto: Funcionalidades para facilitar o contato entre ONGs e voluntários.</p>
+    
+<h2>Tecnologias Utilizadas</h2>
 
-    Inscrição e Contato Direto: Funcionalidades para facilitar o contato entre ONGs e voluntários.
+<ul>
+    <li>Java</li>
+    <li>JUnit (para testes de unidade)</li>
+    <li>JavaFX e Scene Builder (para interface gráfica)</li>
+</ul>
 
-#Tecnologias Utilizadas
+<h2>Layout do Projeto</h2>
+<img src="images/Menu.png" alt="Menu">
 
-    Linguagem: Java
-    Paradigma: Programação Orientada a Objetos (POO)
+<h2>Autores</h2>
+<ul>
+    <li><a href="https://github.com/henriiqueaze/" target="_blank">Henrique Azevedo</a> - Interface Gráfica</li>
+    <li><a href="https://github.com/thiagoports/" target="_blank">Thiago Porto</a> - Classes</li>
+    <li><a href="https://github.com/JoseLucasapp/" target="_blank">José Lucas</a> - Testes Unitários</li>
+    <li><a href="https://github.com/ArthurAkil/" target="_blank">Arthur Akill</a> - Tratamento de Exceções</li>
+</ul>
 
-    Ferramentas:
-    JUnit (para testes de unidade)
-    Interface gráfica utilizando JavaFX
-
-#Estrutura do Projeto
-
-    O desenvolvimento foi dividido entre os membros da equipe, garantindo organização e qualidade:
-
-    Arthur Ákil: Tratamento de exceção
-    José Lucas: Testes de unidade
-    Henrique Azevedo: Criação da classe Main e desenvolvimento da interface gráfica
-    Thiago Porto: Estruturação de arquivos e classes principais
-
-#Exemplos de Uso
-
-    Cadastro de ONG:
-    Uma ONG pode registrar seu nome, área de atuação, e oportunidades disponíveis.
-
-    Busca por Voluntários:
-    Voluntários podem visualizar as oportunidades mais próximas com base em sua localização e interesse.
-    Contribuições
-
-
-Este projeto foi desenvolvido em equipe como parte de um trabalho acadêmico.
-Disciplina: Programação Orientada a Objetos.
-Docente: Pablo Roberto
